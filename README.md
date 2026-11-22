@@ -90,7 +90,7 @@ At concept stage the realistic range is about $1.2M to $2.2M (−20% / +50%). Mo
 
 ## How it was made
 
-Built with help from Claude (Anthropic): it walked me through each Civil 3D session alongside Autodesk's short course units, wrote parts of the earthworks calculator (see that repo's README), and drafted this write-up. Claude drafted the cost estimate and programme; I reviewed the rates and assumptions, pushed for the fixes (rounding, escalation, pavement sensitivity) and can explain each line. I chose the site and route, made the design decisions, built and fixed the Civil 3D model, and checked the outputs.
+Built with help from Claude (Anthropic): it walked me through each Civil 3D session alongside Autodesk's short course units, wrote parts of the earthworks calculator (see that repo's README), and drafted this write-up. Claude assisted in drafting the cost estimate and programme; I reviewed the rates and assumptions, pushed for the fixes (rounding, escalation, pavement sensitivity) and can explain each line. I chose the site and route, made the design decisions, built and fixed the Civil 3D model, and checked the outputs. 
 
 ## Files
 
