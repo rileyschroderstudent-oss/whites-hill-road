@@ -31,14 +31,14 @@ Status, November 2026: design v3 is final; drawings, earthworks check, estimate 
 2. **Alignment.** My first route ran through houses on Ara, Pavo and Indus Streets; I only saw it once I checked against aerial imagery. I moved the road to follow an existing track up the hill, reusing a corridor that is already disturbed to cut clearing and earthworks. Curves cut off the track's tighter bends, so walkers would need a separate path.
 3. **Profile.** Drew the vertical profile with parabolic curves. An early version squeezed the crest curve to 13 m (K 2.7) because the last PVI was only 7 m from the end; I moved it back to give a 30 m curve.
 4. **Corridor.** Built the assembly from the ANZ TMR Queensland subassemblies (Civil 3D ANZ Country Kit 2027) and daylit the batters to the existing ground.
-5. **Independent earthworks check.** Wrote a Python calculator, later ported to MATLAB ([earthworks-calculator](https://github.com/rileyschroderstudent-oss/earthworks-calculator)), and compared it with Civil 3D section by section. It showed my corridor had no shoulder or table drain on the right side. The totals had looked plausible. Fixing it raised cut by 20%.
+5. **Independent earthworks check.** Wrote a Python calculator ([earthworks-calculator](https://github.com/rileyschroderstudent-oss/earthworks-calculator)), and compared it with Civil 3D section by section. It showed my corridor had no shoulder or table drain on the right side. The totals had looked plausible. Fixing it raised cut by 20%.
 6. **Reducing the surplus.** The design was cut-heavy. I raised the grade line and narrowed the table drains (v3), cutting the surplus by 64% (9,425 → 3,404 m³). Balancing cut and fill fully would need a 10.26% grade, over the 10% limit I set, so v3 still has a surplus.
 7. **Cost estimate and programme.** Priced the v3 quantities and laid the build out as a 13-activity programme with a Gantt chart.
 
 ## Tools and data
 
 - Autodesk Civil 3D 2027 (education licence), ANZ Country Kit 2027
-- Python 3.13 (pandas, NumPy, Matplotlib) and MATLAB R2026b for the earthworks check
+- Python 3.13 (pandas, NumPy, Matplotlib) for the earthworks check
 - Terrain: Queensland LiDAR Data – Brisbane 2019 Project, 1 m DEM, from [ELVIS](https://elevation.fsdf.org.au/). © State of Queensland (Department of Resources) 2023, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). GDA94 / MGA Zone 56, heights in AHD.
 - Standards: **not checked against a design standard.** The 10% grade limit is my own. Civil 3D's design checks used the default AASHTO 2011 criteria; a real Queensland job would check against Austroads, TMR's Road Planning and Design Manual and Brisbane City Council requirements.
 
