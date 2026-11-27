@@ -31,14 +31,14 @@ Status, November 2026: design v3 is final; drawings, earthworks check, estimate 
 2. **Alignment.** My first route ran through houses on Ara, Pavo and Indus Streets; I only saw it once I checked against aerial imagery. I moved the road to follow an existing track up the hill, reusing a corridor that is already disturbed to cut clearing and earthworks. Curves cut off the track's tighter bends, so walkers would need a separate path.
 3. **Profile.** Drew the vertical profile with parabolic curves. An early version squeezed the crest curve to 13 m (K 2.7) because the last PVI was only 7 m from the end; I moved it back to give a 30 m curve.
 4. **Corridor.** Built the assembly from the ANZ TMR Queensland subassemblies (Civil 3D ANZ Country Kit 2027) and daylit the batters to the existing ground.
-5. **Independent earthworks check.** Wrote a Python calculator, then ported its level-ground method to MATLAB ([earthworks-calculator](https://github.com/rileyschroderstudent-oss/earthworks-calculator)), and compared it with Civil 3D section by section. It showed my corridor had no shoulder or table drain on the right side. The totals had looked plausible. Fixing it raised cut by 20%.
+5. **Independent earthworks check.** Wrote a Python calculator, later ported to MATLAB ([earthworks-calculator](https://github.com/rileyschroderstudent-oss/earthworks-calculator)), and compared it with Civil 3D section by section. It showed my corridor had no shoulder or table drain on the right side. The totals had looked plausible. Fixing it raised cut by 20%.
 6. **Reducing the surplus.** The design was cut-heavy. I raised the grade line and narrowed the table drains (v3), cutting the surplus by 64% (9,425 → 3,404 m³). Balancing cut and fill fully would need a 10.26% grade, over the 10% limit I set, so v3 still has a surplus.
 7. **Cost estimate and programme.** Priced the v3 quantities and laid the build out as a 13-activity programme with a Gantt chart.
 
 ## Tools and data
 
 - Autodesk Civil 3D 2027 (education licence), ANZ Country Kit 2027
-- Python 3.13 (pandas, NumPy, Matplotlib) and MATLAB R2026b (level-ground port) for the earthworks check
+- Python 3.13 (pandas, NumPy, Matplotlib) and MATLAB R2026b for the earthworks check
 - Terrain: Queensland LiDAR Data – Brisbane 2019 Project, 1 m DEM, from [ELVIS](https://elevation.fsdf.org.au/). © State of Queensland (Department of Resources) 2023, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). GDA94 / MGA Zone 56, heights in AHD.
 - Standards: **not checked against a design standard.** The 10% grade limit is my own. Civil 3D's design checks used the default AASHTO 2011 criteria; a real Queensland job would check against Austroads, TMR's Road Planning and Design Manual and Brisbane City Council requirements.
 
@@ -58,13 +58,13 @@ The calculator matched Civil 3D's cut area at all 19 sample stations (5,385 m³ 
 
 | | Amount |
 |---|---:|
-| Direct works | $919,798 |
-| Preliminaries (12%) | $110,376 |
-| Design, survey and project management (10%) | $103,017 |
-| Contingency (30%) | $339,957 |
+| Direct works | $918,040 |
+| Preliminaries (12%) | $110,165 |
+| Design, survey and project management (10%) | $102,820 |
+| Contingency (30%) | $339,307 |
 | **Total (rounded)** | **about $1.47M** (about $4,000 per metre) |
 
-At concept stage the realistic range is about $1.2M to $2.2M (−20% / +50%). Most rates are assumptions, labelled as such in the estimate; the published sources are BITRE Research Report 148 (earthworks, escalated from 2017 to 2026 using the Queensland road and bridge construction price index), a 2024 Charters Towers Regional Council estimate (clearing, topsoil, culvert pipe) and council landfill fees. Two sensitivities matter more than any single rate:
+At concept stage the realistic range is about $1.2M to $2.2M (−20% / +50%). Most rates are assumptions, labelled as such in the estimate; the published sources are BITRE Research Report 148 (earthworks, escalated from 2017 to 2026 by a factor of 1.43 using the ABS Queensland road and bridge construction price index, Jun-2017 to Sep-2026), a 2024 Charters Towers Regional Council estimate (clearing, topsoil, culvert pipe) and council landfill fees. Two sensitivities matter more than any single rate:
 
 - **Where the spoil goes.** If a nearby site takes clean fill free, the total drops to about $1.36M; if it all goes to council landfill at $136/t, it rises to about $2.73M. That is the real cost of the surplus the grade limit forces.
 - **Pavement depth.** The modelled 0.62 m of granular pavement is deep for a low-traffic road. A typical light-traffic pavement of about 0.35 m (an assumption, not a design) would bring the total to about $1.30M.
@@ -79,7 +79,7 @@ At concept stage the realistic range is about $1.2M to $2.2M (−20% / +50%). Mo
 - No drainage design: culverts and drain lining are priced as allowances, and the table drains' capacity on a 10% grade is not checked.
 - The car park / turning head and the walkers' path are not designed.
 - No survey, services, environmental or approvals assessment. The site is a council reserve.
-- Cost rates are indicative and mostly assumed; no escalation applied.
+- Cost rates are indicative and mostly assumed. Only the BITRE earthworks rate is escalated; its 2017 price base is assumed to be June 2017, because the report gives costs in nominal terms.
 
 ## What I learned / would change
 
@@ -90,7 +90,7 @@ At concept stage the realistic range is about $1.2M to $2.2M (−20% / +50%). Mo
 
 ## How it was made
 
-Built with help from Claude (Anthropic): it walked me through each Civil 3D session alongside Autodesk's short course units, wrote parts of the earthworks calculator (see that repo's README), and drafted this write-up. Claude assisted in drafting the cost estimate and programme; I reviewed the rates and assumptions, pushed for the fixes (rounding, escalation, pavement sensitivity) and can explain each line. I chose the site and route, made the design decisions, built and fixed the Civil 3D model, and checked the outputs. 
+Built with help from Claude (Anthropic): it walked me through each Civil 3D session alongside Autodesk's short course units, wrote parts of the earthworks calculator (see that repo's README), and drafted this write-up. Claude drafted the cost estimate and programme; I reviewed the rates and assumptions, pushed for the fixes (rounding, escalation, pavement sensitivity) and can explain each line. I chose the site and route, made the design decisions, built and fixed the Civil 3D model, and checked the outputs.
 
 ## Files
 
